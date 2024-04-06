@@ -1,0 +1,30 @@
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75em 0.5em;
+  background-color: var(--header-background-color);
+}
+
+.header-inner img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.burger-button {
+  border: 0;
+  padding: 0.5rem;
+  background-color: transparent;
+}
+
+.burger-button > span {
+  display: block;
+  width: 1.125em;
+  height: 0.125em;
+  border-radius: 0.625em;
+  background-color: var(--app-white-color);
+}
+
+.burger-button > span + span {
+  margin-top: 3px;
+}

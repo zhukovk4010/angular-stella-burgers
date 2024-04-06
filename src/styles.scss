@@ -181,9 +181,14 @@ template {
 
 :root {
   box-sizing: border-box;
+
+  --app-background-color: #131316;
+  --header-background-color: #1C1C21;
+  --app-white-color: #F2F2F3;
 }
 
 body {
   box-sizing: inherit;
   font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--app-background-color);
 }
