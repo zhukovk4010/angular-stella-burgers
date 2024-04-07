@@ -1,23 +1,78 @@
+.header {
+  background-color: var(--header-background-color);
+}
+
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75em 0.5em;
-  background-color: var(--header-background-color);
+
+  @media (min-width: 1024px) {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    justify-content: space-between;
+  }
 }
 
-.header-inner img {
+.header-inner__desktop-link {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    padding: 1.25rem;
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+}
+
+.header-inner__desktop-link.list {
+  position: absolute;
+  left: 167px;
+}
+
+.header-inner__desktop-logo {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    font-family: Kanit, sans-serif;
+    font-size: 2rem;
+    line-height: 0.9;
+  }
+}
+
+
+
+.header-inner__mobile-logo {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.header-inner__mobile-logo > img {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.burger-button {
+.header-inner__burger-button {
   border: 0;
   padding: 0.5rem;
   background-color: transparent;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 }
 
-.burger-button > span {
+.header-inner__burger-button > span {
   display: block;
   width: 1.125em;
   height: 0.125em;
@@ -25,6 +80,6 @@
   background-color: var(--app-white-color);
 }
 
-.burger-button > span + span {
+.header-inner__burger-button > span + span {
   margin-top: 3px;
 }
