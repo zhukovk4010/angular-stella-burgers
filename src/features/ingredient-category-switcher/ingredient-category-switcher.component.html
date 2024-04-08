@@ -1,1 +1,16 @@
-<p>ingredient-category-switcher works!</p>
+<div class="switcher-panel">
+  <button
+    [class.active-category]="activeIngredientsCategory === 'rolls'"
+    (click)="switchIngredientsCategory('rolls')"
+  >Булки</button>
+
+  <button
+    (click)="switchIngredientsCategory('sauces')"
+    [class.active-category]="activeIngredientsCategory === 'sauces'"
+  >Соусы</button>
+
+  <button
+    (click)="switchIngredientsCategory('nights')"
+    [class.active-category]="activeIngredientsCategory === 'nights'"
+  >Начинки</button>
+</div>

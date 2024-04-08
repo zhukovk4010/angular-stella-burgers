@@ -1,0 +1,20 @@
+.switcher-panel {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.switcher-panel > button {
+  flex: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: transparent;
+  color: var(--app-white-color);
+  border: 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--header-background-color);
+}
+
+.switcher-panel > button.active-category {
+  padding-bottom: calc(1rem - 1px);
+  border-bottom: 2px solid var(--app-violet-color);
+}

@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './ingredient-category-switcher.component.scss'
 })
 export class IngredientCategorySwitcherComponent {
+  activeIngredientsCategory: 'rolls' | 'sauces' | 'nights' = 'nights';
 
+  switchIngredientsCategory(ingredient: 'rolls' | 'sauces' | 'nights') {
+    this.activeIngredientsCategory = ingredient;
+  }
 }
