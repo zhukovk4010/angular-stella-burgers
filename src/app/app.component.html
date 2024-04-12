@@ -1,2 +1,8 @@
-<app-header />
+@if (windowWidth >= 1024) {
+  <app-header-desktop />
+}
+@if (windowWidth < 1024) {
+  <app-header-mobile />
+}
+
 <app-main-page />
