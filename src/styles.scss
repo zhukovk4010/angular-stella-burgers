@@ -180,12 +180,16 @@ template {
 }
 
 :root {
-  box-sizing: border-box;
-
   --app-background-color: #131316;
   --header-background-color: #1C1C21;
   --app-white-color: #F2F2F3;
   --app-violet-color: #4C4CFF;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {

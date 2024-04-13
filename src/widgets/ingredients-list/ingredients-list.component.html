@@ -1,3 +1,9 @@
-<div>
-
-</div>
+@if (!ingredientsList.length) {
+  Loading
+} @else {
+  <div class="ingredients-list">
+    @for (ingredient of ingredientsList; track ingredient.__v) {
+      <app-ingredient-card [ingredient]="ingredient" />
+    }
+  </div>
+}

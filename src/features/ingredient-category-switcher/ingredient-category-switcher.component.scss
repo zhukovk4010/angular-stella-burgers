@@ -1,6 +1,9 @@
 .switcher-panel {
+  position: sticky;
+  top: 4.375rem;
   display: flex;
   margin-top: 0.5rem;
+  background-color: var(--app-background-color);
 }
 
 .switcher-panel > button {

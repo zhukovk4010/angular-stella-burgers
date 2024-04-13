@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {IngredientCardComponent} from "../../entities/ingredient-card/ingredient-card.component";
 
 interface IIngredient {
   calories: number
@@ -18,7 +19,9 @@ interface IIngredient {
 @Component({
   selector: 'app-ingredients-list',
   standalone: true,
-  imports: [],
+  imports: [
+    IngredientCardComponent
+  ],
   templateUrl: './ingredients-list.component.html',
   styleUrl: './ingredients-list.component.scss'
 })
