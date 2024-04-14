@@ -23,5 +23,5 @@ interface IIngredient {
   styleUrl: './ingredient-card.component.scss'
 })
 export class IngredientCardComponent {
-  @Input() ingredient: IIngredient | null = null;
+  @Input({ required: true }) ingredient: IIngredient | null = null;
 }

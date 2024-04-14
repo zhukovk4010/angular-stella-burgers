@@ -30,5 +30,5 @@ interface IIngredient {
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
-  @Input() ingredientsList: [IIngredient] | [] = [];
+  @Input({ required: true }) ingredientsList: [IIngredient] | [] = [];
 }

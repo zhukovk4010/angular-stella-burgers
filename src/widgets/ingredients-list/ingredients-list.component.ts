@@ -26,5 +26,5 @@ interface IIngredient {
   styleUrl: './ingredients-list.component.scss'
 })
 export class IngredientsListComponent {
-  @Input() ingredientsList: [IIngredient] | [] = [];
+  @Input({ required: true }) ingredientsList: [IIngredient] | [] = [];
 }
