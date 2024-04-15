@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {
     IngredientCategorySwitcherComponent
 } from "../../../features/ingredient-category-switcher/ingredient-category-switcher.component";
@@ -17,5 +17,6 @@ import {IIngredient} from "../../../types/types";
 })
 
 export class MainComponent {
-  @Input({ required: true }) ingredientsList: [IIngredient] | [] = [];
+  @Input({ required: true }) ingredientsList: IIngredient[] = [];
+  @Output() selectIngredient = new EventEmitter<IIngredient>();
 }

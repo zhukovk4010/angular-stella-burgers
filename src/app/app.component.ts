@@ -23,7 +23,13 @@ interface IResponse {
 
 export class AppComponent {
   windowWidth: number = 0;
-  ingredientsDataArray: [IIngredient] | [] = [];
+  ingredientsDataArray: IIngredient[] = [];
+
+  selectedIngredientsArray: IIngredient[] = [];
+
+  selectIngredient = (ingredient: IIngredient) => {
+    this.selectedIngredientsArray.push(ingredient);
+  }
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(width: number) {
