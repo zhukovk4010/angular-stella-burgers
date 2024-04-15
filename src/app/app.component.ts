@@ -1,28 +1,14 @@
 import {Component, HostListener, Injectable} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MainComponent} from "../pages/main/main.component";
-import {HeaderDesktopComponent} from "../shared/ui/header-desktop/header-desktop.component";
-import {HeaderMobileComponent} from "../shared/ui/header-mobile/header-mobile.component";
+import {MainComponent} from "../pages/main/ui/main.component";
+import {HeaderDesktopComponent} from "../widgets/header/ui/header-desktop/header-desktop.component";
+import {HeaderMobileComponent} from "../widgets/header/ui/header-mobile/header-mobile.component";
 import {HttpClient} from "@angular/common/http";
-
-interface IResponseData {
-  calories: number
-  carbohydrates: number
-  fat: number
-  image: string
-  image_large: string
-  image_mobile: string
-  name: string
-  price: number
-  proteins: number
-  type: string
-  __v: number
-  _id: number
-}
+import {IIngredient} from "../types/types";
 
 interface IResponse {
   success: boolean
-  data: [IResponseData]
+  data: [IIngredient]
 }
 
 @Component({
@@ -37,7 +23,7 @@ interface IResponse {
 
 export class AppComponent {
   windowWidth: number = 0;
-  ingredientsDataArray: [IResponseData] | [] = [];
+  ingredientsDataArray: [IIngredient] | [] = [];
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(width: number) {
@@ -45,7 +31,8 @@ export class AppComponent {
   }
 
   constructor(private http: HttpClient) {
-    http.get<IResponse>('https://norma.nomoreparties.space/api/ingredients').subscribe(config => {
+    http.get<IResponse>('https://norma.nomoreparties.space/api/ingredients')
+      .subscribe(config => {
       this.ingredientsDataArray = config.data;
     })
   }

@@ -1,20 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {IngredientCardComponent} from "../../entities/ingredient-card/ingredient-card.component";
+import {IngredientCardComponent} from "../../entities/ingredient-card/ui/ingredient-card.component";
+import {IIngredient} from "../../types/types";
 
-interface IIngredient {
-  calories: number
-  carbohydrates: number
-  fat: number
-  image: string
-  image_large: string
-  image_mobile: string
-  name: string
-  price: number
-  proteins: number
-  type: string
-  __v: number
-  _id: number
-}
 
 @Component({
   selector: 'app-ingredients-list',
