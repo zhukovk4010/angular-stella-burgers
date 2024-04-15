@@ -1,5 +1,4 @@
-.header-inner {
-  background-color: var(--header-background-color);
+:host {
   position: relative;
   display: flex;
   max-width: 1280px;
@@ -8,7 +7,7 @@
   justify-content: space-between;
 }
 
-.header-inner__desktop-link {
+.desktop-link {
   display: flex;
   padding: 1.25rem;
   gap: 0.5rem;
@@ -17,12 +16,12 @@
   letter-spacing: 0.03em;
 }
 
-.header-inner__desktop-link.list {
+.desktop-link.list {
   position: absolute;
   left: 167px;
 }
 
-.header-inner__desktop-logo {
+.desktop-logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;

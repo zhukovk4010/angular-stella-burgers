@@ -1,8 +1,12 @@
-@if (windowWidth >= 1024) {
-  <app-header-desktop />
-}
-@if (windowWidth < 1024) {
-  <app-header-mobile />
-}
+<header class="header">
+  @if (windowWidth >= 1024) {
+    <app-header-desktop />
+  }
+  @if (windowWidth < 1024) {
+    <app-header-mobile />
+  }
+</header>
 
-<app-main-page [ingredientsList]="ingredientsDataArray" />
+<main>
+  <app-main-page [ingredientsList]="ingredientsDataArray" />
+</main>
