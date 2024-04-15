@@ -22,7 +22,7 @@ interface IResponse {
 @Injectable({providedIn: 'root'})
 
 export class AppComponent {
-  windowWidth: number = 0;
+  windowWidth: number = window.innerWidth;
   ingredientsDataArray: IIngredient[] = [];
 
   selectedIngredientsArray: IIngredient[] = [];
