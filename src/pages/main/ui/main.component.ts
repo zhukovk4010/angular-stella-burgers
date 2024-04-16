@@ -17,6 +17,7 @@ import {IIngredient} from "../../../types/types";
 })
 
 export class MainComponent {
-  @Input({ required: true }) ingredientsList: IIngredient[] = [];
+  @Input({ required: true }) ingredientsArray: IIngredient[] = [];
+  @Input({required: true}) selectedIngredientsArray: IIngredient[] = [];
   @Output() selectIngredient = new EventEmitter<IIngredient>();
 }

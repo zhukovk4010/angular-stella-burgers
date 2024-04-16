@@ -1,9 +1,13 @@
-@if (!ingredientsList.length) {
+@if (!ingredientsArray.length) {
   Loading
 } @else {
   <div class="ingredients-list">
-    @for (ingredient of ingredientsList; track 'ingredient' + ingredient.__v) {
-      <app-ingredient-card (selectIngredient)="selectIngredient.emit($event)" [ingredient]="ingredient" />
+    @for (ingredient of ingredientsArray; track 'ingredient' + ingredient.__v) {
+      <app-ingredient-card
+        (selectIngredient)="selectIngredient.emit($event)"
+        [ingredient]="ingredient"
+        [quantityOfSelectedIngredients]="countingTheNumberOfSelectedIngredients(ingredient)"
+      />
     }
   </div>
 }

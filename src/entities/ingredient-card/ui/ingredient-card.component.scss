@@ -1,4 +1,5 @@
 :host {
+  position: relative;
   width: calc(50% - 0.5rem);
   padding: 0.5rem;
   display: flex;
@@ -24,4 +25,18 @@
   background-color: transparent;
   border: 0;
   color: var(--app-violet-color);
+}
+
+.ingredient-counter {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  min-width: 1.5rem;
+  padding: 0 0.4rem;
+  border-radius: 0.75rem;
+  background-color: var(--app-violet-color);
+  color: var(--app-white-color);
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
 }

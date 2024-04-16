@@ -8,5 +8,9 @@
 </header>
 
 <main>
-  <app-main-page (selectIngredient)="selectIngredient($event)" [ingredientsList]="ingredientsDataArray" />
+  <app-main-page
+    (selectIngredient)="selectIngredient($event)"
+    [ingredientsArray]="ingredientsDataArray"
+    [selectedIngredientsArray]="selectedIngredientsArray"
+  />
 </main>

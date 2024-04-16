@@ -14,6 +14,19 @@ import {IIngredient} from "../../types/types";
 })
 
 export class IngredientsListComponent {
-  @Input({ required: true }) ingredientsList: IIngredient[] = [];
+  @Input({ required: true }) ingredientsArray: IIngredient[] = [];
+  @Input({required: true}) selectedIngredientsArray: IIngredient[] = [];
   @Output() selectIngredient = new EventEmitter<IIngredient>();
+
+  countingTheNumberOfSelectedIngredients = (ingredient: IIngredient) => {
+    let counter = 0;
+
+    this.selectedIngredientsArray.forEach(selectedIngredient => {
+      if (selectedIngredient._id === ingredient._id) {
+        counter += 1;
+      }
+    });
+
+    return counter;
+  }
 }
