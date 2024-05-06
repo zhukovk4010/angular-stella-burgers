@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {IngredientCardComponent} from "../../entities/ingredient-card/ui/ingredient-card.component";
-import {IIngredient} from "../../types/types";
+import {IngredientCardComponent} from "../../../entities/ingredient-card/ui/ingredient-card.component";
+import {IIngredient} from "../../../types/types";
 
 
 @Component({

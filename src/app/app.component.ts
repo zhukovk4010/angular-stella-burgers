@@ -1,8 +1,8 @@
 import {Component, HostListener, Injectable} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {MainComponent} from "../pages/main/ui/main.component";
-import {HeaderDesktopComponent} from "../widgets/header/ui/header-desktop/header-desktop.component";
-import {HeaderMobileComponent} from "../widgets/header/ui/header-mobile/header-mobile.component";
+import {MainComponent} from "../pages/main";
+import {HeaderDesktopComponent} from "../widgets/header";
+import {HeaderMobileComponent} from "../widgets/header";
 import {HttpClient} from "@angular/common/http";
 import {IIngredient} from "../types/types";
 
