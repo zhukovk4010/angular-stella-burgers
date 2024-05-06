@@ -1,0 +1,10 @@
+.button {
+  padding: 0.625rem 2rem;
+  border-radius: 1.5rem;
+  border: 0;
+  background-image: linear-gradient(30deg, var(--app-purple-color), var(--app-blue-color));
+  color: var(--app-white-color);
+  box-shadow: 0 0 0.75rem var(--app-blue-color);
+
+  font-size: 1.25rem;
+}

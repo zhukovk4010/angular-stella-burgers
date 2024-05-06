@@ -4,13 +4,15 @@ import {
 } from "../../../features/ingredient-category-switcher/";
 import {IngredientsListComponent} from "../../../widgets/ingredients-list";
 import {IIngredient} from "../../../types/types";
+import {BasketModalComponent} from "../../../widgets/basket-modal";
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
   imports: [
     IngredientCategorySwitcherComponent,
-    IngredientsListComponent
+    IngredientsListComponent,
+    BasketModalComponent
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
