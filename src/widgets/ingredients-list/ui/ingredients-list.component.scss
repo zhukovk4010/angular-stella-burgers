@@ -1,4 +1,11 @@
-.ingredients-list {
+.category-title {
+  display: block;
+  font-size: 1.25rem;
+  padding-left: 0.5rem;
+  font-weight: 700;
+}
+
+.category-list {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;

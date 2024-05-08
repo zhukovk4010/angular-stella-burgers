@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {IngredientCardComponent} from "../../../entities/ingredient-card/ui/ingredient-card.component";
 import {IIngredient} from "../../../types/types";
 
@@ -13,10 +13,28 @@ import {IIngredient} from "../../../types/types";
   styleUrl: './ingredients-list.component.scss'
 })
 
-export class IngredientsListComponent {
+export class IngredientsListComponent implements OnChanges {
   @Input({ required: true }) ingredientsArray: IIngredient[] = [];
   @Input({required: true}) selectedIngredientsArray: IIngredient[] = [];
   @Output() selectIngredient = new EventEmitter<IIngredient>();
+
+  //Dividing the Ingredient List
+  bunsArray: IIngredient[] = [];
+  saucesArray: IIngredient[] = [];
+  fillingsArray: IIngredient[] = [];
+
+  ngOnChanges() {
+    console.log(this.ingredientsArray)
+    this.bunsArray = this.ingredientsArray.filter((ingredient) => {
+      return (ingredient.type === 'bun');
+    });
+    this.saucesArray = this.ingredientsArray.filter((ingredient) => {
+      return (ingredient.type === 'sauce');
+    });
+    this.fillingsArray = this.ingredientsArray.filter((ingredient) => {
+      return (ingredient.type === 'main');
+    });
+  }
 
   countingTheNumberOfSelectedIngredients = (ingredient: IIngredient) => {
     let counter = 0;
