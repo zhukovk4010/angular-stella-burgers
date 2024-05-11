@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-ingredient-category-switcher',
@@ -8,9 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './ingredient-category-switcher.component.scss'
 })
 export class IngredientCategorySwitcherComponent {
-  activeIngredientsCategory: 'rolls' | 'sauces' | 'nights' = 'rolls';
+  @Output() switchSection = new EventEmitter<1 | 2 | 3>();
 
-  switchIngredientsCategory(ingredient: 'rolls' | 'sauces' | 'nights') {
-    this.activeIngredientsCategory = ingredient;
+  activeIngredientsCategory: 1 | 2 | 3 = 1;
+
+  switchIngredientsCategory(sectionNumber: 1 | 2 | 3) {
+    this.activeIngredientsCategory = sectionNumber;
+    this.switchSection.emit(sectionNumber);
   }
 }

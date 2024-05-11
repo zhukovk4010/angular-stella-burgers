@@ -22,4 +22,10 @@ export class MainComponent {
   @Input({ required: true }) ingredientsArray: IIngredient[] = [];
   @Input({required: true}) selectedIngredientsArray: IIngredient[] = [];
   @Output() selectIngredient = new EventEmitter<IIngredient>();
+
+  sectionNumberToSwitch: 0 | 1 | 2 | 3 = 0
+
+  switchSection(sectionNumber: 1 | 2 | 3) {
+    this.sectionNumberToSwitch = sectionNumber;
+  }
 }

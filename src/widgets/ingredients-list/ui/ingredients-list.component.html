@@ -1,7 +1,7 @@
 @if (!ingredientsArray.length) {
   Loading
 } @else {
-    <h3 class="category-title">Булки</h3>
+    <h3 #bunsTitle class="category-title">Булки</h3>
     <div class="category-list">
       @for (ingredient of bunsArray; track 'ingredient' + ingredient.__v) {
         <app-ingredient-card
@@ -12,7 +12,7 @@
       }
     </div>
 
-    <h3 class="category-title">Соусы</h3>
+    <h3 #saucesTitle class="category-title">Соусы</h3>
     <div class="category-list">
       @for (ingredient of saucesArray; track 'ingredient' + ingredient.__v) {
         <app-ingredient-card
@@ -23,7 +23,7 @@
       }
     </div>
 
-    <h3 class="category-title">Начинки</h3>
+    <h3 #fillingsTitle class="category-title">Начинки</h3>
     <div class="category-list">
       @for (ingredient of fillingsArray; track 'ingredient' + ingredient.__v) {
         <app-ingredient-card

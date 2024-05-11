@@ -1,16 +1,16 @@
 <div class="switcher-panel">
   <button
-    [class.active-category]="activeIngredientsCategory === 'rolls'"
-    (click)="switchIngredientsCategory('rolls')"
+    (click)="switchIngredientsCategory(1)"
+    [class.active-category]="activeIngredientsCategory === 1"
   >Булки</button>
 
   <button
-    (click)="switchIngredientsCategory('sauces')"
-    [class.active-category]="activeIngredientsCategory === 'sauces'"
+    (click)="switchIngredientsCategory(2)"
+    [class.active-category]="activeIngredientsCategory === 2"
   >Соусы</button>
 
   <button
-    (click)="switchIngredientsCategory('nights')"
-    [class.active-category]="activeIngredientsCategory === 'nights'"
+    (click)="switchIngredientsCategory(3)"
+    [class.active-category]="activeIngredientsCategory === 3"
   >Начинки</button>
 </div>
