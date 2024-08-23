@@ -1,4 +1,8 @@
-:host {
+.header {
+  background-color: var(--menu-background-color);
+}
+
+.header__inner {
   position: relative;
   display: flex;
   max-width: 1280px;
@@ -16,7 +20,7 @@
   letter-spacing: 0.03em;
 }
 
-.desktop-link.list {
+.desktop-link.active {
   position: absolute;
   left: 167px;
 }

@@ -1,10 +1,11 @@
 import {Component, HostListener, Injectable} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MainComponent} from "../pages/main";
-import {HeaderDesktopComponent} from "../widgets/header";
-import {HeaderMobileComponent} from "../widgets/header";
+
 import {HttpClient} from "@angular/common/http";
 import {IIngredient} from "../types/types";
+import {HeaderMobileComponent} from "./common-ui/header/header-mobile/header-mobile.component";
+import {HeaderDesktopComponent} from "./common-ui/header/header-desktop/header-desktop.component";
 
 interface IResponse {
   success: boolean
@@ -14,7 +15,7 @@ interface IResponse {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainComponent, HeaderDesktopComponent, HeaderMobileComponent],
+  imports: [RouterOutlet, MainComponent, HeaderMobileComponent, HeaderDesktopComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

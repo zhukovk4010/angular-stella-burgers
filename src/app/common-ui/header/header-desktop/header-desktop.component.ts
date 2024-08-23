@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-header-desktop',
   standalone: true,
-  imports: [
-    NgOptimizedImage
-  ],
+  imports: [],
   templateUrl: './header-desktop.component.html',
   styleUrl: './header-desktop.component.scss'
 })

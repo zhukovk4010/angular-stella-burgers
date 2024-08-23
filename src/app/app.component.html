@@ -1,16 +1,23 @@
-<header class="header">
-  @if (windowWidth >= 1024) {
-    <app-header-desktop />
-  }
-  @if (windowWidth < 1024) {
-    <app-header-mobile />
-  }
-</header>
+@if (windowWidth >= 1024) {
+  <app-header-desktop />
+} @else {
+  <app-header-mobile />
+}
+
+<!--<header class="header">-->
+<!--  @if (windowWidth >= 1024) {-->
+<!--    <app-header-desktop />-->
+<!--  }-->
+<!--  @if (windowWidth < 1024) {-->
+<!--    <app-header-mobile />-->
+<!--  }-->
+<!--</header>-->
 
 <main>
-  <app-main-page
-    (selectIngredient)="selectIngredient($event)"
-    [ingredientsArray]="ingredientsDataArray"
-    [selectedIngredientsArray]="selectedIngredientsArray"
-  />
+<!--  <app-main-page-->
+<!--    (selectIngredient)="selectIngredient($event)"-->
+<!--    [ingredientsArray]="ingredientsDataArray"-->
+<!--    [selectedIngredientsArray]="selectedIngredientsArray"-->
+<!--  />-->
+<!--  <router-outlet />-->
 </main>
