@@ -1,0 +1,25 @@
+:host {
+  position: sticky;
+  z-index: 1;
+  top: 4rem;
+  display: flex;
+  margin-top: 0.5rem;
+  background-color: var(--app-background-color);
+}
+
+.switch-panel-button {
+  flex: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: transparent;
+  color: var(--app-white-color);
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px solid transparent;
+  font-size: 0.875rem;
+}
+
+.switch-panel-button.active {
+  border-bottom: 2px solid var(--app-violet-color);
+}

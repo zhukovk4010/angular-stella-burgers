@@ -6,6 +6,7 @@ import {HttpClient} from "@angular/common/http";
 import {IIngredient} from "../types/types";
 import {HeaderMobileComponent} from "./common-ui/header/header-mobile/header-mobile.component";
 import {HeaderDesktopComponent} from "./common-ui/header/header-desktop/header-desktop.component";
+import {ConstructorPageComponent} from "./pages/constructor-page/constructor-page.component";
 
 interface IResponse {
   success: boolean
@@ -15,7 +16,7 @@ interface IResponse {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainComponent, HeaderMobileComponent, HeaderDesktopComponent],
+  imports: [RouterOutlet, MainComponent, HeaderMobileComponent, HeaderDesktopComponent, ConstructorPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
