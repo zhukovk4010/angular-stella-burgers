@@ -8,11 +8,12 @@
 }
 
 .ingredients-list-title {
-
+  margin-top: 1rem;
 }
 
 .ingredients-list {
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 }

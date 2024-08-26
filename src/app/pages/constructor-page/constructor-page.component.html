@@ -3,7 +3,7 @@
   <app-ingredients-switch/>
 
   <div class="constructor-page__inner">
-    <h3 class="h3 ingredients-list-title">Булки</h3>
+    <h3 class="h3">Булки</h3>
     <div class="ingredients-list">
       @for (ingredient of bunsList(); track ingredient._id) {
         <app-ingredient-card [ingredient]="ingredient" />
