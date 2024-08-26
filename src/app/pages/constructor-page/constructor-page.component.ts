@@ -2,12 +2,14 @@ import {Component, computed, inject, signal} from '@angular/core';
 import {IngredientsSwitchComponent} from "../../common-ui/ingredients-switch/ingredients-switch.component";
 import {IngredientsService} from "../../data/services/ingredients.service";
 import {IIngredient} from "../../data/interfaces/Ingredient.interface";
+import {IngredientCardComponent} from "../../common-ui/ingredient-card/ingredient-card.component";
 
 @Component({
   selector: 'app-constructor-page',
   standalone: true,
   imports: [
-    IngredientsSwitchComponent
+    IngredientsSwitchComponent,
+    IngredientCardComponent
   ],
   templateUrl: './constructor-page.component.html',
   styleUrl: './constructor-page.component.scss'

@@ -18,7 +18,7 @@
 body {
   box-sizing: inherit;
   font-family: 'Roboto', Arial, sans-serif;
-  line-height: 1.4;
+  line-height: 1.2;
   background-color: var(--app-background-color);
   color: var(--app-white-color);
 }
@@ -32,5 +32,11 @@ a {
 
 .h1 {
   font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.h3 {
+  margin: 0;
+  font-size: 1.25rem;
   font-weight: 700;
 }
