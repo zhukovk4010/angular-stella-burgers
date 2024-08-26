@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, computed, inject, signal} from '@angular/core';
 import {IngredientsSwitchComponent} from "../../common-ui/ingredients-switch/ingredients-switch.component";
 import {IngredientsService} from "../../data/services/ingredients.service";
 import {IIngredient} from "../../data/interfaces/Ingredient.interface";
@@ -15,14 +15,37 @@ import {IIngredient} from "../../data/interfaces/Ingredient.interface";
 export class ConstructorPageComponent {
   profileService = inject(IngredientsService);
 
-  ingredientsList: IIngredient[] = [];
+  ingredientsList = signal<IIngredient[]>([]);
+  bunsList = computed(() => {
+    if (this.ingredientsList().length) {
+      return this.ingredientsList().filter(ingredient => ingredient.type === 'bun');
+    } else {
+      return [];
+    }
+  })
+
+  mainList = computed(() => {
+    if (this.ingredientsList().length) {
+      return this.ingredientsList().filter(ingredient => ingredient.type === 'main');
+    } else {
+      return [];
+    }
+  })
+
+  saucesList = computed(() => {
+    if (this.ingredientsList().length) {
+      return this.ingredientsList().filter(ingredient => ingredient.type === 'sauce');
+    } else {
+      return [];
+    }
+  })
+
 
   constructor() {
     this.profileService.getIngredients().subscribe(res => {
       if (res.success) {
-        this.ingredientsList = res.data;
+        this.ingredientsList.set(res.data);
       }
     })
-
   }
 }
