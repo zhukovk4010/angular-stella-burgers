@@ -49,6 +49,16 @@ export class ConstructorPageComponent {
       .update(selectedIngredients => selectedIngredients.concat(ingredient));
   }
 
+  checkIngredientSelected = (id: string) => {
+    let selectedNumber = 0;
+
+    this.selectedIngredientsList().forEach(ingredient => {
+      if (ingredient._id === id) selectedNumber++;
+    })
+
+    return selectedNumber;
+  }
+
   constructor() {
     this.profileService.getIngredients().subscribe(res => {
       if (res.success) {

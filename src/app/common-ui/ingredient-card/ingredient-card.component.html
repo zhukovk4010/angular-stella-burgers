@@ -5,3 +5,7 @@
 </div>
 <p class="ingredient-name">{{ ingredient.name }}</p>
 <button (click)="onAddIngredient.emit(ingredient)" class="button-add">Добавить</button>
+
+@if (selectedNumber) {
+  <div class="ingredient-counter">{{selectedNumber}}</div>
+}

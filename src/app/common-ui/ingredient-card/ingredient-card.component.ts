@@ -13,5 +13,6 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class IngredientCardComponent {
   @Input() ingredient!: IIngredient;
+  @Input() selectedNumber!: number;
   @Output() onAddIngredient = new EventEmitter<IIngredient>();
 }
