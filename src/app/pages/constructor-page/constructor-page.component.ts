@@ -42,6 +42,12 @@ export class ConstructorPageComponent {
     }
   })
 
+  selectedIngredientsList = signal<IIngredient[]>([])
+
+  selectIngredient = (ingredient: IIngredient) => {
+    this.selectedIngredientsList
+      .update(selectedIngredients => selectedIngredients.concat(ingredient));
+  }
 
   constructor() {
     this.profileService.getIngredients().subscribe(res => {

@@ -6,21 +6,21 @@
     <h3 class="h3">Булки</h3>
     <div class="ingredients-list">
       @for (ingredient of bunsList(); track ingredient._id) {
-        <app-ingredient-card [ingredient]="ingredient" />
+        <app-ingredient-card (onAddIngredient)="selectIngredient($event)" [ingredient]="ingredient" />
       }
     </div>
 
     <h3 class="h3 ingredients-list-title">Соусы</h3>
     <div class="ingredients-list">
       @for (ingredient of saucesList(); track ingredient._id) {
-        <app-ingredient-card [ingredient]="ingredient" />
+        <app-ingredient-card (onAddIngredient)="selectIngredient($event)" [ingredient]="ingredient" />
       }
     </div>
 
     <h3 class="h3 ingredients-list-title">Основные ингердиенты</h3>
     <div class="ingredients-list">
       @for (ingredient of mainList(); track ingredient._id) {
-        <app-ingredient-card [ingredient]="ingredient" />
+        <app-ingredient-card (onAddIngredient)="selectIngredient($event)" [ingredient]="ingredient" />
       }
     </div>
   </div>

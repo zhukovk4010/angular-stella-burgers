@@ -4,4 +4,4 @@
   <img ngSrc="../../../assets/icons/currency.svg" width="24" height="24" alt="Currency">
 </div>
 <p class="ingredient-name">{{ ingredient.name }}</p>
-<button class="button-add">Добавить</button>
+<button (click)="onAddIngredient.emit(ingredient)" class="button-add">Добавить</button>
