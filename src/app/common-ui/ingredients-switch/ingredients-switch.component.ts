@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 
 @Component({
   selector: 'app-ingredients-switch',
@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './ingredients-switch.component.scss'
 })
 export class IngredientsSwitchComponent {
-  activeIngredientsCategory: 1 | 2 | 3 = 1;
+  activeIngredientsCategory = signal<'rolls' | 'sauces' | 'filling'>('rolls');
 
-  switchIngredientsCategory(sectionNumber: 1 | 2 | 3) {
-    this.activeIngredientsCategory = sectionNumber;
+  switchIngredientsCategory(sectionNumber: 'rolls' | 'sauces' | 'filling') {
+    this.activeIngredientsCategory.set(sectionNumber);
   }
 }

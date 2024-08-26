@@ -1,21 +1,21 @@
 <button
-  (click)="switchIngredientsCategory(1)"
+  (click)="switchIngredientsCategory('rolls')"
   class="switch-panel-button"
-  [class.active]="activeIngredientsCategory === 1"
+  [class.active]="activeIngredientsCategory() === 'rolls'"
 >Булки
 </button>
 
 <button
-  (click)="switchIngredientsCategory(2)"
+  (click)="switchIngredientsCategory('sauces')"
   class="switch-panel-button"
-  [class.active]="activeIngredientsCategory === 2"
+  [class.active]="activeIngredientsCategory() === 'sauces'"
 >Соусы
 </button>
 
 <button
-  (click)="switchIngredientsCategory(3)"
+  (click)="switchIngredientsCategory('filling')"
   class="switch-panel-button"
-  [class.active]="activeIngredientsCategory === 3"
+  [class.active]="activeIngredientsCategory() === 'filling'"
 >Начинки
 </button>
 
