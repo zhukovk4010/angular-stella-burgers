@@ -18,6 +18,8 @@
   border-left: 0;
   border-bottom: 2px solid transparent;
   font-size: 0.875rem;
+
+  transition: border-bottom-color 0.1s ease-out;
 }
 
 .switch-panel-button.active {
