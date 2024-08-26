@@ -17,3 +17,32 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+.order-price-modal {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem 1rem 0 0;
+  background-color: var(--widget-background-color);
+  box-shadow: 0 0 0.25rem 0 var(--app-background-color);
+}
+
+.order-price {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.order-price__sum {
+  font-size: 1.375rem;
+}
+
+.order-price__currency {
+  height: 22px;
+}

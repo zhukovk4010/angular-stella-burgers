@@ -3,13 +3,15 @@ import {IngredientsSwitchComponent} from "../../common-ui/ingredients-switch/ing
 import {IngredientsService} from "../../data/services/ingredients.service";
 import {IIngredient} from "../../data/interfaces/Ingredient.interface";
 import {IngredientCardComponent} from "../../common-ui/ingredient-card/ingredient-card.component";
+import {SvgIconComponent} from "../../common-ui/svg-icon/svg-icon.component";
 
 @Component({
   selector: 'app-constructor-page',
   standalone: true,
   imports: [
     IngredientsSwitchComponent,
-    IngredientCardComponent
+    IngredientCardComponent,
+    SvgIconComponent
   ],
   templateUrl: './constructor-page.component.html',
   styleUrl: './constructor-page.component.scss'
@@ -18,6 +20,8 @@ export class ConstructorPageComponent {
   profileService = inject(IngredientsService);
 
   ingredientsList = signal<IIngredient[]>([]);
+  selectedIngredientsList = signal<IIngredient[]>([])
+
   bunsList = computed(() => {
     if (this.ingredientsList().length) {
       return this.ingredientsList().filter(ingredient => ingredient.type === 'bun');
@@ -42,13 +46,16 @@ export class ConstructorPageComponent {
     }
   })
 
-  selectedIngredientsList = signal<IIngredient[]>([])
+  orderSum = computed(() => {
+    return this.selectedIngredientsList().reduce((sum, current) => sum + current.price, 0)
+  })
 
   selectIngredient = (ingredient: IIngredient) => {
     this.selectedIngredientsList
       .update(selectedIngredients => selectedIngredients.concat(ingredient));
   }
 
+  //function for ingredient counter
   checkIngredientSelected = (id: string) => {
     let selectedNumber = 0;
 

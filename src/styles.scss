@@ -2,7 +2,7 @@
 
 :root {
   --app-background-color: #131316;
-  --menu-background-color: #1C1C21;
+  --widget-background-color: #1C1C21;
   --app-white-color: #F2F2F3;
   --app-violet-color: #4C4CFF;
   --app-purple-color: #801AB2;
@@ -39,4 +39,17 @@ a {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+/* BUTTONS */
+
+.gradient-button {
+  padding: 0.5rem 2.5rem;
+  border-radius: 2rem;
+  border: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--app-white-color);
+  background-image: linear-gradient(15deg, var(--app-purple-color), var(--app-blue-color));
+  box-shadow: 0 0.125rem 0.75rem 0 var(--app-blue-color);
 }
