@@ -1,4 +1,4 @@
-import {Component, HostListener, Injectable} from '@angular/core';
+import {Component, HostListener, Injectable, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import {HeaderMobileComponent} from "./common-ui/header/header-mobile/header-mobile.component";
@@ -16,10 +16,10 @@ import {ConstructorPageComponent} from "./pages/constructor-page/constructor-pag
 @Injectable({providedIn: 'root'})
 
 export class AppComponent {
-  windowWidth: number = window.innerWidth;
+  windowWidth = signal<number>(window.innerWidth);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(width: number) {
-    this.windowWidth = width;
+    this.windowWidth.set(width);
   }
 }

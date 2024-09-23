@@ -38,7 +38,7 @@
   </div>
 
   @if (orderSum()) {
-    <div class="order-price-modal">
+    <div [@openClose]="'open'" class="order-price-modal">
       <div class="order-price">
         <span class="order-price__sum">{{orderSum()}}</span>
         <app-svg-icon icon="currency" width="22" height="22" class="order-price__currency" />

@@ -4,6 +4,13 @@ import {IngredientsService} from "../../data/services/ingredients.service";
 import {IIngredient} from "../../data/interfaces/Ingredient.interface";
 import {IngredientCardComponent} from "../../common-ui/ingredient-card/ingredient-card.component";
 import {SvgIconComponent} from "../../common-ui/svg-icon/svg-icon.component";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from "@angular/animations";
 
 @Component({
   selector: 'app-constructor-page',
@@ -14,10 +21,29 @@ import {SvgIconComponent} from "../../common-ui/svg-icon/svg-icon.component";
     SvgIconComponent
   ],
   templateUrl: './constructor-page.component.html',
-  styleUrl: './constructor-page.component.scss'
+  styleUrl: './constructor-page.component.scss',
+  animations: [
+    trigger(
+      'openClose', [
+        state(
+          'open',
+          style({
+            height: '*',
+            opacity: 1,
+            paddingTop: '1rem',
+            paddingBottom: '1rem'
+          })
+        ),
+        transition('void => open', [
+          style({bottom: '-100px', opacity: 0, paddingTop: '0', paddingBottom: '0'}),
+          animate('0.3s ease-out')
+        ])
+      ]
+    )
+  ]
 })
 export class ConstructorPageComponent {
-  profileService = inject(IngredientsService);
+  ingredientService = inject(IngredientsService);
 
   ingredientsList = signal<IIngredient[]>([]);
   selectedIngredientsList = signal<IIngredient[]>([])
@@ -67,7 +93,7 @@ export class ConstructorPageComponent {
   }
 
   constructor() {
-    this.profileService.getIngredients().subscribe(res => {
+    this.ingredientService.getIngredients().subscribe(res => {
       if (res.success) {
         this.ingredientsList.set(res.data);
       }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {IIngredient} from "../../data/interfaces/Ingredient.interface";
 import {NgOptimizedImage} from "@angular/common";
 
@@ -11,8 +11,12 @@ import {NgOptimizedImage} from "@angular/common";
   templateUrl: './ingredient-card.component.html',
   styleUrl: './ingredient-card.component.scss'
 })
-export class IngredientCardComponent {
+export class IngredientCardComponent implements OnChanges {
   @Input() ingredient!: IIngredient;
   @Input() selectedNumber!: number;
   @Output() onAddIngredient = new EventEmitter<IIngredient>();
+
+  ngOnChanges(): void {
+    console.log('ngOnInit - Компонент загружен');
+  }
 }
