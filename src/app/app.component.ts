@@ -16,7 +16,7 @@ import {ConstructorPageComponent} from "./pages/constructor-page/constructor-pag
 @Injectable({providedIn: 'root'})
 
 export class AppComponent {
-  windowWidth = signal<number>(window.innerWidth);
+  public windowWidth = signal<number>(window.innerWidth);
 
   @HostListener('window:resize', ['$event.target.innerWidth'])
   onResize(width: number) {
