@@ -45,39 +45,39 @@ import {
 export class ConstructorPageComponent {
   ingredientService = inject(IngredientsService);
 
-  ingredientsList = signal<IIngredient[]>([]);
-  selectedIngredientsList = signal<IIngredient[]>([])
+  private _ingredientsList = signal<IIngredient[]>([]);
+  private _selectedIngredientsList = signal<IIngredient[]>([])
 
   bunsList = computed(() => {
-    if (this.ingredientsList().length) {
-      return this.ingredientsList().filter(ingredient => ingredient.type === 'bun');
+    if (this._ingredientsList().length) {
+      return this._ingredientsList().filter(ingredient => ingredient.type === 'bun');
     } else {
       return [];
     }
   })
 
   mainList = computed(() => {
-    if (this.ingredientsList().length) {
-      return this.ingredientsList().filter(ingredient => ingredient.type === 'main');
+    if (this._ingredientsList().length) {
+      return this._ingredientsList().filter(ingredient => ingredient.type === 'main');
     } else {
       return [];
     }
   })
 
   saucesList = computed(() => {
-    if (this.ingredientsList().length) {
-      return this.ingredientsList().filter(ingredient => ingredient.type === 'sauce');
+    if (this._ingredientsList().length) {
+      return this._ingredientsList().filter(ingredient => ingredient.type === 'sauce');
     } else {
       return [];
     }
   })
 
   orderSum = computed(() => {
-    return this.selectedIngredientsList().reduce((sum, current) => sum + current.price, 0)
+    return this._selectedIngredientsList().reduce((sum, current) => sum + current.price, 0)
   })
 
   selectIngredient = (ingredient: IIngredient) => {
-    this.selectedIngredientsList
+    this._selectedIngredientsList
       .update(selectedIngredients => selectedIngredients.concat(ingredient));
   }
 
@@ -85,7 +85,7 @@ export class ConstructorPageComponent {
   checkIngredientSelected = (id: string) => {
     let selectedNumber = 0;
 
-    this.selectedIngredientsList().forEach(ingredient => {
+    this._selectedIngredientsList().forEach(ingredient => {
       if (ingredient._id === id) selectedNumber++;
     })
 
@@ -95,7 +95,7 @@ export class ConstructorPageComponent {
   constructor() {
     this.ingredientService.getIngredients().subscribe(res => {
       if (res.success) {
-        this.ingredientsList.set(res.data);
+        this._ingredientsList.set(res.data);
       }
     })
   }
