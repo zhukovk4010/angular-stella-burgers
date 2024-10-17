@@ -11,6 +11,7 @@ import {
   animate,
   transition
 } from "@angular/animations";
+import {OrderMobileModalComponent} from "./order-mobile-modal/order-mobile-modal.component";
 
 @Component({
   selector: 'app-constructor-page',
@@ -18,7 +19,8 @@ import {
   imports: [
     IngredientsSwitchComponent,
     IngredientCardComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    OrderMobileModalComponent
   ],
   templateUrl: './constructor-page.component.html',
   styleUrl: './constructor-page.component.scss',
@@ -43,12 +45,11 @@ import {
   ]
 })
 export class ConstructorPageComponent {
-  ingredientService = inject(IngredientsService);
-
   private _ingredientsList = signal<IIngredient[]>([]);
-  private _selectedIngredientsList = signal<IIngredient[]>([])
+  private _selectedIngredientsList = signal<IIngredient[]>([]);
+  public isOrderMobileModalOpen = signal<boolean>(false);
 
-  bunsList = computed(() => {
+  public bunsList = computed(() => {
     if (this._ingredientsList().length) {
       return this._ingredientsList().filter(ingredient => ingredient.type === 'bun');
     } else {
@@ -56,7 +57,7 @@ export class ConstructorPageComponent {
     }
   })
 
-  mainList = computed(() => {
+  public mainList = computed(() => {
     if (this._ingredientsList().length) {
       return this._ingredientsList().filter(ingredient => ingredient.type === 'main');
     } else {
@@ -64,7 +65,7 @@ export class ConstructorPageComponent {
     }
   })
 
-  saucesList = computed(() => {
+  public saucesList = computed(() => {
     if (this._ingredientsList().length) {
       return this._ingredientsList().filter(ingredient => ingredient.type === 'sauce');
     } else {
@@ -72,17 +73,25 @@ export class ConstructorPageComponent {
     }
   })
 
-  orderSum = computed(() => {
+  public orderSum = computed(() => {
     return this._selectedIngredientsList().reduce((sum, current) => sum + current.price, 0)
   })
 
-  selectIngredient = (ingredient: IIngredient) => {
+  constructor(private ingredientService: IngredientsService) {
+    this.ingredientService.getIngredients().subscribe(res => {
+      if (res.success) {
+        this._ingredientsList.set(res.data);
+      }
+    })
+  }
+
+  public selectIngredient = (ingredient: IIngredient) => {
     this._selectedIngredientsList
       .update(selectedIngredients => selectedIngredients.concat(ingredient));
   }
 
   //function for ingredient counter
-  checkIngredientSelected = (id: string) => {
+  public checkIngredientSelected = (id: string) => {
     let selectedNumber = 0;
 
     this._selectedIngredientsList().forEach(ingredient => {
@@ -92,11 +101,11 @@ export class ConstructorPageComponent {
     return selectedNumber;
   }
 
-  constructor() {
-    this.ingredientService.getIngredients().subscribe(res => {
-      if (res.success) {
-        this._ingredientsList.set(res.data);
-      }
-    })
+  public onOrderButtonClick = () => {
+    this.isOrderMobileModalOpen.set(true);
+  }
+
+  public closeOrderModal = () => {
+    this.isOrderMobileModalOpen.set(false);
   }
 }

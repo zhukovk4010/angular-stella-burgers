@@ -43,7 +43,11 @@
         <span class="order-price__sum">{{orderSum()}}</span>
         <app-svg-icon icon="currency" width="22" height="22" class="order-price__currency" />
       </div>
-      <button class="gradient-button">Смотреть заказ</button>
+      <button (click)="onOrderButtonClick()" class="gradient-button">Смотреть заказ</button>
     </div>
+  }
+
+  @if (isOrderMobileModalOpen()) {
+    <app-order-mobile-modal (closeOrder)="closeOrderModal()" />
   }
 </main>

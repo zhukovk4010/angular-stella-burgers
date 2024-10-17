@@ -1,0 +1,25 @@
+.order-mobile-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transform: translateX(100%);
+  opacity: 0;
+  background-color: var(--app-background-color);
+}
+
+.order-mobile-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+}
+
+.close-button {
+  padding: 0.75rem;
+  background-color: transparent;
+  border: 0;
+  color: var(--app-white-color);
+}

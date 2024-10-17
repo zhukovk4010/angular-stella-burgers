@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
   template: `<svg [attr.width]="width" [attr.height]="height">
                 <use [attr.href]="href" [attr.width]="width" [attr.height]="height"></use>
              </svg>`,
-  styles: ['']
+  styleUrl: './svg-icon.component.scss'
 })
 export class SvgIconComponent {
   @Input() icon = '';
