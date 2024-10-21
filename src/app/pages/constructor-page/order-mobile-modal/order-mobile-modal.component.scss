@@ -8,9 +8,13 @@
   transform: translateX(100%);
   opacity: 0;
   background-color: var(--app-background-color);
+  overflow-y: auto;
 }
 
 .order-mobile-modal__header {
+  position: sticky;
+  top: 0;
+  background-color: var(--app-background-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,4 +26,8 @@
   background-color: transparent;
   border: 0;
   color: var(--app-white-color);
+}
+
+.order-mobile-modal__inner {
+  overflow-y: auto;
 }

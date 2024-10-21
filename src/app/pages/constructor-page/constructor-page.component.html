@@ -48,6 +48,6 @@
   }
 
   @if (isOrderMobileModalOpen()) {
-    <app-order-mobile-modal (closeOrder)="closeOrderModal()" />
+    <app-order-mobile-modal [selectedIngredientsList]="selectedIngredientsList()" (closeOrder)="closeOrderModal()" />
   }
 </main>

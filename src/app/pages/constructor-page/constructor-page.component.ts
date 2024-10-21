@@ -1,4 +1,4 @@
-import {Component, computed, inject, signal} from '@angular/core';
+import {Component, computed, signal} from '@angular/core';
 import {IngredientsSwitchComponent} from "../../common-ui/ingredients-switch/ingredients-switch.component";
 import {IngredientsService} from "../../data/services/ingredients.service";
 import {IIngredient} from "../../data/interfaces/Ingredient.interface";
@@ -46,7 +46,7 @@ import {OrderMobileModalComponent} from "./order-mobile-modal/order-mobile-modal
 })
 export class ConstructorPageComponent {
   private _ingredientsList = signal<IIngredient[]>([]);
-  private _selectedIngredientsList = signal<IIngredient[]>([]);
+  public selectedIngredientsList = signal<IIngredient[]>([]);
   public isOrderMobileModalOpen = signal<boolean>(false);
 
   public bunsList = computed(() => {
@@ -74,7 +74,7 @@ export class ConstructorPageComponent {
   })
 
   public orderSum = computed(() => {
-    return this._selectedIngredientsList().reduce((sum, current) => sum + current.price, 0)
+    return this.selectedIngredientsList().reduce((sum, current) => sum + current.price, 0)
   })
 
   constructor(private ingredientService: IngredientsService) {
@@ -86,7 +86,7 @@ export class ConstructorPageComponent {
   }
 
   public selectIngredient = (ingredient: IIngredient) => {
-    this._selectedIngredientsList
+    this.selectedIngredientsList
       .update(selectedIngredients => selectedIngredients.concat(ingredient));
   }
 
@@ -94,7 +94,7 @@ export class ConstructorPageComponent {
   public checkIngredientSelected = (id: string) => {
     let selectedNumber = 0;
 
-    this._selectedIngredientsList().forEach(ingredient => {
+    this.selectedIngredientsList().forEach(ingredient => {
       if (ingredient._id === id) selectedNumber++;
     })
 

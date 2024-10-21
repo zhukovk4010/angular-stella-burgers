@@ -1,0 +1,27 @@
+.order-ingredient-mobile {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+
+.order-ingredient-mobile__description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.5rem 1rem 0;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--app-gray-color);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.order-ingredient-mobile__description > img {
+  width: 3.25rem;
+  aspect-ratio: 1 / 0.8;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.order-ingredient-mobile__description__name {
+  flex: 1;
+}

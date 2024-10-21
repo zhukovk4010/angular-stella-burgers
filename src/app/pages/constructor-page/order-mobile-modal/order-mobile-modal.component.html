@@ -5,5 +5,8 @@
       <app-svg-icon icon="close" width="24" height="24" />
     </button>
   </div>
+  @for (ingredient of selectedIngredientsList; let idx = $index; track 'order-ingredient-mobile-' + ingredient._id + idx) {
+    <app-order-ingredient-mobile [ingredient]="ingredient"/>
+  }
 </div>
 
