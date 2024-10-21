@@ -12,5 +12,5 @@ import {SvgIconComponent} from "../svg-icon/svg-icon.component";
   styleUrl: './order-ingredient-mobile.component.scss'
 })
 export class OrderIngredientMobileComponent {
-  @Input() ingredient!: IIngredient;
+  @Input({required: true}) ingredient!: IIngredient;
 }

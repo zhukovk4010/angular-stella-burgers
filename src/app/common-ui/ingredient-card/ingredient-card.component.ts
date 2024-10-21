@@ -12,8 +12,8 @@ import {NgOptimizedImage} from "@angular/common";
   styleUrl: './ingredient-card.component.scss'
 })
 export class IngredientCardComponent implements OnChanges {
-  @Input() ingredient!: IIngredient;
-  @Input() selectedNumber!: number;
+  @Input({required: true}) ingredient!: IIngredient;
+  @Input({required: true}) selectedNumber!: number;
   @Output() onAddIngredient = new EventEmitter<IIngredient>();
 
   ngOnChanges(): void {

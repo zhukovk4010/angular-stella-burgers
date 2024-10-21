@@ -33,7 +33,7 @@ import {
   ]
 })
 export class OrderMobileModalComponent {
-  @Input() selectedIngredientsList!: IIngredient[];
+  @Input({required: true}) selectedIngredientsList!: IIngredient[];
   @Output() closeOrder = new EventEmitter<void>();
 
   public onCloseOrderButtonClick = () => {

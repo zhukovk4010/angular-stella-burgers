@@ -2,7 +2,7 @@
   <div class="order-mobile-modal__header">
     <h2 class="h1">Заказ</h2>
     <button (click)="onCloseOrderButtonClick()" class="close-button">
-      <app-svg-icon icon="close" width="24" height="24" />
+      <app-svg-icon icon="close" />
     </button>
   </div>
   @for (ingredient of selectedIngredientsList; let idx = $index; track 'order-ingredient-mobile-' + ingredient._id + idx) {
