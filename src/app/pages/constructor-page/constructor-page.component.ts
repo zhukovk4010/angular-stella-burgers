@@ -103,9 +103,11 @@ export class ConstructorPageComponent {
 
   public onOrderButtonClick = () => {
     this.isOrderMobileModalOpen.set(true);
+    document.body.style.overflowY = 'hidden';
   }
 
   public closeOrderModal = () => {
     this.isOrderMobileModalOpen.set(false);
+    document.body.style.overflowY = '';
   }
 }
