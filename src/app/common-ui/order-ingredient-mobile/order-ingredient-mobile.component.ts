@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, ElementRef, Input, ViewChild} from '@angular/core';
 import {IIngredient} from "../../data/interfaces/Ingredient.interface";
 import {SvgIconComponent} from "../svg-icon/svg-icon.component";
 
@@ -13,4 +13,9 @@ import {SvgIconComponent} from "../svg-icon/svg-icon.component";
 })
 export class OrderIngredientMobileComponent {
   @Input({required: true}) ingredient!: IIngredient;
+  @ViewChild('orderIngredientElement', {static: false}) orderIngredientElement!: ElementRef;
+
+  public onTouchStart() {
+    console.log(this.orderIngredientElement)
+  }
 }

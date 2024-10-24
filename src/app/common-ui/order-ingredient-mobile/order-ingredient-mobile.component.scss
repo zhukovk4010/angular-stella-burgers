@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   padding-left: 0.5rem;
+  overflow-x: hidden;
 }
 
 .order-ingredient-mobile__description {
-  flex: 1;
+  flex-basis: calc(100% - 24px);
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   padding: 1rem 0.5rem 1rem 0;
@@ -24,4 +26,13 @@
 
 .order-ingredient-mobile__description__name {
   flex: 1;
+  flex-shrink: 0;
+}
+
+.order-ingredient-mobile__description__delete-button {
+  flex-basis: 40%;
+  flex-shrink: 0;
+  height: 100%;
+  border: 0;
+  background-color: var(--app-red-color);
 }

@@ -1,10 +1,12 @@
 <div class="order-ingredient-mobile">
   <app-svg-icon icon="order-ingredient-icon" width="24" height="24" />
 
-  <div class="order-ingredient-mobile__description">
+  <div #orderIngredientElement (touchstart)="onTouchStart()" class="order-ingredient-mobile__description">
     <img [src]="ingredient.image_mobile" alt="">
     <span class="order-ingredient-mobile__description__name">{{ ingredient.name }}</span>
     <span>{{ ingredient.price }}</span>
-    <app-svg-icon icon="currency" width="24" height="24" />
+    <app-svg-icon icon="currency" width="24" height="24"/>
   </div>
+
+  <button class="order-ingredient-mobile__description__delete-button"></button>
 </div>
